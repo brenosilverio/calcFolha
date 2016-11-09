@@ -16,9 +16,11 @@ public class CalculatorController {
         binder.addValidators(new CalcValidator());
     }	
 	
-	@RequestMapping("calculator")
+	@RequestMapping("/calculator")
 	public ModelAndView index() {
-		return null;
+		ModelAndView modelAndView = new ModelAndView("/index");
+		System.out.println("Calculator");
+		return modelAndView;
 	}
 	
 	@RequestMapping("calculator/form")

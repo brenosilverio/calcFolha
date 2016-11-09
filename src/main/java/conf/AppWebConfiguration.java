@@ -7,8 +7,11 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import view.CalculatorController;
+import view.HomeController;
+
 @EnableWebMvc
-@ComponentScan(basePackageClasses={})
+@ComponentScan(basePackageClasses={HomeController.class, CalculatorController.class})
 public class AppWebConfiguration {
 	
 	@Bean
@@ -16,6 +19,7 @@ public class AppWebConfiguration {
 		 InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
 		 viewResolver.setPrefix("/WEB-INF/views/");
 		 viewResolver.setSuffix(".jsp");
+		 
 		 return viewResolver;
 	}
 	
