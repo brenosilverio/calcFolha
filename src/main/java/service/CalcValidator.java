@@ -16,15 +16,15 @@ public class CalcValidator implements Validator {
 		Calculator calculator = (Calculator) target;
 
 		if (calculator.getVlAction() < 0) {
-			errors.rejectValue("vlAction", "field.required");
+			errors.rejectValue("action", "field.required");
 		}
 
-		if (calculator.getInterestPurch() < 0) {
-			errors.rejectValue("vlInterest", "field.required");
+		if (calculator.getVlInterest() < 0) {
+			errors.rejectValue("interest", "field.required");
 		}
 
 		if (calculator.getQtPurch() < 0) {
-			errors.rejectValue("qtPurch", "field.required");
+			errors.rejectValue("purch", "field.required");
 		}
 	}
 }

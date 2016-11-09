@@ -4,8 +4,7 @@ public class Calculator {
 	
 	private double vlAction;
 	private double vlInterest;
-	private double qtPurch;
-	private double interestPurch;
+	private Integer qtPurch;
 	
 	public double getVlAction() {
 		return vlAction;
@@ -19,16 +18,11 @@ public class Calculator {
 	public void setVlInterest(double vlInterest) {
 		this.vlInterest = vlInterest;
 	}
-	public double getQtPurch() {
-		return qtPurch;
-	}
-	public void setQtPurch(double qtPurch) {
-		this.qtPurch = qtPurch;
-	}
-	public double getInterestPurch() {
-		return interestPurch;
-	}
-	public void setInterestPurch(double interestPurch) {
-		this.interestPurch = interestPurch;
-	}
+    public Integer getQtPurch() {
+        return qtPurch;
+    }
+    public void setQtPurch(Integer qtPurch) {
+        this.qtPurch = qtPurch;
+    }
+
 }

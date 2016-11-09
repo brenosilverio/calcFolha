@@ -7,11 +7,12 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
+import service.CalculatorFunctions;
 import view.CalculatorController;
 import view.HomeController;
 
 @EnableWebMvc
-@ComponentScan(basePackageClasses={HomeController.class, CalculatorController.class})
+@ComponentScan(basePackages = {"view", "conf", "model", "service", "dao"})
 public class AppWebConfiguration {
 	
 	@Bean

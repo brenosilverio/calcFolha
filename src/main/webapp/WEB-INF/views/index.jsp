@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,31 +14,31 @@
 <body>
 
 	<div class="container">
-		<h2>Calculadora Folha Invest</h2>
+		<h3 style="text-align: center;">Calculadora Folha Invest</h3>
 		<div class="row">
 			<div class="col s12 m3"></div>
 			<div class="col s12 m6">
-				<form action="">
+				<form action="calculator/form">
 					<div class="input-field col s12">
-						<input id="password" type="text" class="validate"
-							placeholder="Valor Inicial">
+						<input id="action" type="text" class="validate"
+							placeholder="Valor Inicial" name="action">
 					</div>
 					<div class="input-field col s12">
-						<input id="password" type="text" class="validate"
-							placeholder="Valor do Juros">
+						<input id="interest" type="text" class="validate"
+							placeholder="Valor do Juros" name="interest">
 					</div>
 					<div class="input-field col s12">
-						<input id="password" type="text" class="validate"
-							placeholder="Quantidade Comprada">
+						<input id="purch" type="text" class="validate"
+							placeholder="Quantidade Comprada" name="purch">
 					</div>
 					<button class="btn waves-effect waves-light" type="submit"
-						name="action">Submit</button>
+						name="action">Calcular</button>
 				</form>
 			</div>
 			<div class="col s12 m3"></div>
 		</div>
 
-		<footer class="page-footer">
+		<!-- <footer class="page-footer">
 			<div class="container">
 				<div class="row">
 					<div class="col l6 s12">
@@ -61,7 +63,7 @@
 			<div class="footer-copyright">
 				<div class="container">© 2016 Copyright</div>
 			</div>
-		</footer>
+		</footer> -->
 
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
