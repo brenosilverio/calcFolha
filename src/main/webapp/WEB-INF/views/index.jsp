@@ -18,10 +18,11 @@
 		<div class="row">
 			<div class="col s12 m3"></div>
 			<div class="col s12 m6">
-				<form action="calculator/form">
+				<form action="calculator/form" method="POST">
 					<div class="input-field col s12">
 						<input id="action" type="text" class="validate"
 							placeholder="Valor Inicial" name="action">
+							<form:errors path="calculator.vlAction"/>
 					</div>
 					<div class="input-field col s12">
 						<input id="interest" type="text" class="validate"

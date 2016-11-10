@@ -8,7 +8,6 @@
 </head>
 <body>
 	<h3>Home</h3>
-	
 	<a href="calculator">Acessar Calculadora</a>
 </body>
 </html>
