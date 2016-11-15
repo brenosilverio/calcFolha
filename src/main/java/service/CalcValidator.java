@@ -14,22 +14,22 @@ public class CalcValidator implements Validator {
 
 	public void validate(Object target, Errors errors) {
 		
-		ValidationUtils.rejectIfEmpty(errors, "action", "field.required");
-        ValidationUtils.rejectIfEmpty(errors, "interest", "field.required");
-        ValidationUtils.rejectIfEmpty(errors, "purch", "field.required");
+		ValidationUtils.rejectIfEmpty(errors, "vlAction", "field.action");
+        ValidationUtils.rejectIfEmpty(errors, "vlInterest", "field.interest");
+        ValidationUtils.rejectIfEmpty(errors, "qtPurch", "field.purchased");
 
 		Calculator calculator = (Calculator) target;
 
 		if (calculator.getVlAction() < 0) {
-			errors.rejectValue("action", "field.required");
+			errors.rejectValue("action", "field.action");
 		}
 
 		if (calculator.getVlInterest() < 0) {
-			errors.rejectValue("interest", "field.required");
+			errors.rejectValue("vlInterest", "field.interest");
 		}
 
 		if (calculator.getQtPurch() < 0) {
-			errors.rejectValue("purch", "field.required");
+			errors.rejectValue("qtPurch", "field.purchased");
 		}
 	}
 }
