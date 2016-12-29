@@ -6,22 +6,22 @@ import model.Calculator;
 
 @Service
 public class CalculatorFunctions {
-    
-    public void calcActions(double vlAction, double vlInterest, Integer qtPurch) {
+
+    public Calculator calcActions(Calculator calculator) {
+
+        double total;
+        double action   = calculator.getVlAction();
+        double interest = calculator.getVlInterest();
+        double purch    = calculator.getQtPurch();
         
-        Calculator calculator = new Calculator();
+        total = action + + interest + purch;
+
+        System.out.println(total);
         
-        calculator.setVlAction(vlAction);
-        calculator.setVlInterest(vlInterest);
-        calculator.setQtPurch(qtPurch);
+        calculator.getQtPurch();
+        calculator.getVlAction();
+        calculator.getVlInterest();
         
-        double tot = vlAction + vlInterest;
-        
-        System.out.println(tot);
+        return calculator;
     }
-    
-    public void resultCalc() {
-        
-    }
-	
 }

@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="ISO-8859-1"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%> 
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,30 +12,49 @@
 <title>Calculadora Folha Invest</title>
 </head>
 <body>
-
 	<div class="container">
-		<h3 style="text-align: center;">Calculadora Folha Invest</h3>
+		<h3 style="text-align: center"></h3>
 		<div class="row">
 			<div class="col s12 m3"></div>
 			<div class="col s12 m6">
-				<form action="calculator/form" method="POST">
+				<form action="/calculadora/calculator" method="POST"
+					name="calculator">
 					<div class="input-field col s12">
-						<input id="action" type="text" class="validate"
-							placeholder="Valor Inicial" name="action">
-							<form:errors path="calculator.vlAction"/>
+						<input id="vlAction" type="text" class="validate"
+							placeholder="Valor Inicial" name="vlAction"
+							onkeypress='return numeroDecimal(this)' required />
 					</div>
 					<div class="input-field col s12">
-						<input id="interest" type="text" class="validate"
-							placeholder="Valor do Juros" name="interest">
+						<input id="vlInterest" type="text" class="validate"
+							placeholder="Valor do Juros"
+							onkeypress='return numeroJuros(this)' name="vlInterest" required />
 					</div>
 					<div class="input-field col s12">
-						<input id="purch" type="text" class="validate"
-							placeholder="Quantidade Comprada" name="purch">
+						<input id="qtPurch" type="text" class="validate"
+							placeholder="Quantidade Comprada"
+							onkeypress='return numeroInteiro(this)' name="qtPurch" required />
 					</div>
 					<button class="btn waves-effect waves-light" type="submit"
 						name="action">Calcular</button>
 				</form>
+				<br />
+				<table>
+					<tr>
+						<td class="tg-yw4l">Corretagem</td>
+						<td class="tg-yw4l">${results.vlAction}</td>
+					</tr>
+					<tr>
+						<td class="tg-yw4l">Corretagem</td>
+						<td class="tg-yw4l">${results.vlAction}</td>
+					</tr>
+					<tr>
+						<td class="tg-yw4l">Emolumentos</td>
+						<td class="tg-yw4l">${results.vlInterest}</td>
+					</tr>
+				</table>
 			</div>
+
+
 			<div class="col s12 m3"></div>
 		</div>
 
@@ -68,6 +87,46 @@
 
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+
+		<script type="text/javascript">
+			function numeroDecimal(e) {
+				var tecla = (window.event) ? event.keyCode : e.which;
+				if (tecla == 46)
+					return true;
+				if (tecla > 47 && tecla < 58)
+					return true;
+				else {
+					if (tecla == 8 || tecla == 0)
+						return true;
+					else
+						return false;
+				}
+			}
+			function numeroJuros(e) {
+				var tecla = (window.event) ? event.keyCode : e.which;
+				if (tecla > 44 && tecla < 47)
+					return true;
+				if (tecla > 47 && tecla < 58)
+					return true;
+				else {
+					if (tecla == 8 || tecla == 0)
+						return true;
+					else
+						return false;
+				}
+			}
+			function numeroInteiro(e) {
+				var tecla = (window.event) ? event.keyCode : e.which;
+				if (tecla > 47 && tecla < 58)
+					return true;
+				else {
+					if (tecla == 8 || tecla == 0)
+						return true;
+					else
+						return false;
+				}
+			}
+		</script>
 	</div>
 </body>
 </html>
