@@ -10,6 +10,17 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculadora Folha Invest</title>
+<style>
+	.table {
+		padding: 0px;
+	}
+	.table tr {
+		padding: 0px;
+	}
+	.table td {
+		padding: 5px;
+	}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -38,18 +49,26 @@
 						name="action">Calcular</button>
 				</form>
 				<br />
-				<table>
+				<table class="table">
 					<tr>
-						<td class="tg-yw4l">Corretagem</td>
-						<td class="tg-yw4l">${results.vlAction}</td>
+						<td class="tg-yw4l">Total Ganho</td>
+						<td class="tg-yw4l">${results.totalWin}</td>
 					</tr>
 					<tr>
-						<td class="tg-yw4l">Corretagem</td>
-						<td class="tg-yw4l">${results.vlAction}</td>
+						<td class="tg-yw4l">Juros Compra</td>
+						<td class="tg-yw4l">${results.interestBuyPurch}</td>
+					</tr>
+					<tr>
+						<td class="tg-yw4l">Juros Venda</td>
+						<td class="tg-yw4l">${results.interestBuySale}</td>
 					</tr>
 					<tr>
 						<td class="tg-yw4l">Emolumentos</td>
-						<td class="tg-yw4l">${results.vlInterest}</td>
+						<td class="tg-yw4l">${results.emolumentsPurch}</td>
+					</tr>
+					<tr>
+						<td class="tg-yw4l">Lucro Líquido</td>
+						<td class="tg-yw4l">${results.liquidProfit}</td>
 					</tr>
 				</table>
 			</div>
