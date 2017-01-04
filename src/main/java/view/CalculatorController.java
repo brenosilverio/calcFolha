@@ -19,14 +19,9 @@ public class CalculatorController {
     @Autowired
     private CalculatorFunctions calculatorFunctions;
 
-    @InitBinder
-    public void InitBinder(WebDataBinder binder) {
-        binder.addValidators(new CalcValidator());
-    }
-
     @RequestMapping(value = { "/calculatorForm" }, method = RequestMethod.GET)
     public ModelAndView index(Calculator calculator) {
-        ModelAndView mv = new ModelAndView("/index");
+        ModelAndView mv = new ModelAndView("/home");
         return mv;
     }
 
@@ -34,9 +29,8 @@ public class CalculatorController {
     public ModelAndView calcResult(@ModelAttribute("calculator") Calculator calculator) {
         
         calculator = calculatorFunctions.calcActions(calculator);
-        ModelAndView mv = new ModelAndView("/index");        
+        ModelAndView mv = new ModelAndView("/home");        
         mv.addObject("results", calculator);
         return mv;
-
     }
 }

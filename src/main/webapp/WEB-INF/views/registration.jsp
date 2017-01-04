@@ -18,24 +18,26 @@
 		<div class="row">
 			<div class="col s12 m3"></div>
 			<div class="col s12 m6">
-				<form action="/loginForm" method="POST" name="loginForm">
+				<form action="/calculadora/loginformRegistration" method="POST" name="userSave">
 					<div class="input-field col s12">
-						<input id="email" type="text" class="validate"
-							placeholder="email" name="email" required />
+						<input id="name" type="text" class="validate"
+							placeholder="Nome Completo" name="name" required />
+					</div>
+					<div class="input-field col s12">
+						<input id="mail" type="text" class="validate"
+							placeholder="Email" name="mail" required />
 					</div>
 					<div class="input-field col s12">
 						<input id="pass" type="text" class="validate"
-							placeholder="senha" name="pass" required />
+							placeholder="Senha" name="pass" required />
 					</div>
 					<button class="btn waves-effect waves-light" type="submit"
-						name="action">Acessar</button>
-						<a href="formRegistration"><p>Criar uma Conta</p></a>
+						name="action">Registrar</button>
+					<a href="login"><p>Voltar</p></a>
 				</form>
 			</div>
 			<div class="col s12 m3"></div>
 		</div>
-		
-		<a href="calculatorForm">Calc</a>
 
 		<!-- <footer class="page-footer">
 			<div class="container">

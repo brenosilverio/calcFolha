@@ -1,7 +1,5 @@
 package service;
 
-import java.text.DecimalFormat;
-
 import org.springframework.stereotype.Service;
 
 import model.Calculator;

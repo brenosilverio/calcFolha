@@ -23,17 +23,17 @@ public class JPAConfiguration {
 		factoryBean.setJpaVendorAdapter(vendorAdapter);
 		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setUsername("");
-		dataSource.setPassword("");
-		dataSource.setUrl("");
-		dataSource.setDriverClassName("");
+		dataSource.setUsername("rbs");
+		dataSource.setPassword("Rb5!!!!!");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/calculatorfolha?useSSL=false");
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
 		
 		factoryBean.setDataSource(dataSource);
 		
 		Properties props = new Properties();
-		props.setProperty("", "");
-		props.setProperty("", "");
-		props.setProperty("", "");
+		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+        props.setProperty("hibernate.show_sql", "true");
+        props.setProperty("hibernate.hbm2ddl.auto", "create");
 		
 		factoryBean.setJpaProperties(props);
 		
