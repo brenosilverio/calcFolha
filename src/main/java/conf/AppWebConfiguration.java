@@ -7,12 +7,8 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
 
-import service.CalculatorFunctions;
-import view.CalculatorController;
-import view.HomeController;
-
 @EnableWebMvc
-@ComponentScan(basePackages = {"view", "conf", "model", "service", "dao"})
+@ComponentScan(basePackages = {"conf", "view", "model", "service", "dao"})
 public class AppWebConfiguration {
 	
 	@Bean
@@ -24,6 +20,7 @@ public class AppWebConfiguration {
 		 return viewResolver;
 	}
 	
+	@Bean
 	public MessageSource messageSource () {
 		ReloadableResourceBundleMessageSource messageSource = new ReloadableResourceBundleMessageSource();
 		messageSource.setBasename("/resources/messages");

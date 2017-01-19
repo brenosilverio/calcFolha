@@ -24,13 +24,18 @@
 							placeholder="Nome Completo" name="name" required />
 					</div>
 					<div class="input-field col s12">
-						<input id="mail" type="text" class="validate"
-							placeholder="Email" name="mail" required />
+						<input id="email" type="email" class="validate"
+							placeholder="Email" name="email" required aria-required="true" />
 					</div>
 					<div class="input-field col s12">
-						<input id="pass" type="text" class="validate"
-							placeholder="Senha" name="pass" required />
+						<input id="pass" type="password" class="validate"
+							placeholder="Senha" name="pass" maxlength="6" required/>
 					</div>
+					<div class="input-field col s12">
+						<input id="passConfirm" type="password" class="validate"
+							placeholder="Confirmar Senha" name="passConfirm" maxlength="6" required />
+					</div>
+					
 					<button class="btn waves-effect waves-light" type="submit"
 						name="action">Registrar</button>
 					<a href="login"><p>Voltar</p></a>
@@ -68,6 +73,19 @@
 
 		<script
 			src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.8/js/materialize.min.js"></script>
+		<script type="text/javascript">
+			var password = document.getElementById("pass")
+			,confirm_password = document.getElementById("passConfirm");
+			function validatePassword(){
+				if(password.value != confirm_password.value) {
+			    	confirm_password.setCustomValidity("Senha nao confere");
+			  	} else {
+			    	confirm_password.setCustomValidity('');
+			  	}
+			}
+			pass.onchange = validatePassword;
+			passConfirm.onkeyup = validatePassword;
+		</script>
 	</div>
 </body>
 </html>

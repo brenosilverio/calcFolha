@@ -5,27 +5,33 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 
 @Entity
-@Table(name ="users")
 public class Users {
     
 	@Id
-	@Column(name = "id")
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 	
-	@Column(name ="username")
+	@Column(name = "name", length = 100)
 	private String name;
 	
-	@Column(name ="usermail")
+	@Column(name = "email", length = 100)
 	private String email;
 	
-	@Column(name ="userpass")
+	@Column(name = "pass", length = 6)
 	private String pass;
 	
-	public int getId() {
+	@Column(name = "passConfirm", length = 6)
+	private String passConfirm;
+	
+	public String getPassConfirm() {
+        return passConfirm;
+    }
+    public void setPassConfirm(String passConfirm) {
+        this.passConfirm = passConfirm;
+    }
+    public int getId() {
 		return id;
 	}
 	public void setId(int id) {

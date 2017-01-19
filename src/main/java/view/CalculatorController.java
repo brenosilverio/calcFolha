@@ -20,7 +20,7 @@ public class CalculatorController {
     private CalculatorFunctions calculatorFunctions;
 
     @RequestMapping(value = { "/calculatorForm" }, method = RequestMethod.GET)
-    public ModelAndView index(Calculator calculator) {
+    public ModelAndView index() {
         ModelAndView mv = new ModelAndView("/home");
         return mv;
     }

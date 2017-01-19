@@ -24,11 +24,10 @@ public class HomeController {
 	}
 	
 	@RequestMapping(value = "/loginForm", method = RequestMethod.POST)
-	public ModelAndView loginForm(@RequestParam ("user") String user, @RequestParam ("pass") String pass) {
+	public ModelAndView loginForm(@RequestParam("user") String user, @RequestParam("pass") String pass) {
 	    ModelAndView mv = new ModelAndView();
 	    return mv;
 	}
-	
 	
 	@RequestMapping(value = "/formRegistration", method = RequestMethod.GET)
     public ModelAndView formRegistration() {
@@ -36,11 +35,9 @@ public class HomeController {
         return mv;
     }
 	
-	@RequestMapping(value = "/loginformRegistration", method = RequestMethod.POST)
-    public ModelAndView loginFormRegistration(@RequestParam ("name") String name,
-            @RequestParam ("mail") String mail,
-            @RequestParam ("pass") String pass) {
-	    calculatorForm.saveUser(name, mail, pass);
+	@RequestMapping(value = "/loginformRegistration", method = RequestMethod.POST) 
+    public ModelAndView loginFormRegistration(@ModelAttribute("userSave") Users users) {
+	    calculatorForm.saveUser(users);
         ModelAndView mv = new ModelAndView("/registration");
         return mv;
     }

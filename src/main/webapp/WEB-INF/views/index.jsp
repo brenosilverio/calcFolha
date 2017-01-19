@@ -20,8 +20,8 @@
 			<div class="col s12 m6">
 				<form action="/loginForm" method="POST" name="loginForm">
 					<div class="input-field col s12">
-						<input id="email" type="text" class="validate"
-							placeholder="email" name="email" required />
+						<input id="email" type="email" class="validate"
+							placeholder="email" name="email" required aria-required="true" />
 					</div>
 					<div class="input-field col s12">
 						<input id="pass" type="text" class="validate"

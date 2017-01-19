@@ -25,15 +25,15 @@ public class JPAConfiguration {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 		dataSource.setUsername("rbs");
 		dataSource.setPassword("Rb5!!!!!");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/calculatorfolha?useSSL=false");
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/calculator?useTimezone=true&serverTimezone=UTC");
+		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		
 		factoryBean.setDataSource(dataSource);
 		
 		Properties props = new Properties();
-		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5Dialect");
+		props.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL5InnoDBDialect");
         props.setProperty("hibernate.show_sql", "true");
-        props.setProperty("hibernate.hbm2ddl.auto", "create");
+        props.setProperty("hibernate.hbm2ddl.auto", "update");
 		
 		factoryBean.setJpaProperties(props);
 		

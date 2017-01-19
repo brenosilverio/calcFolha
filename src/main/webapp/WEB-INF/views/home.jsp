@@ -11,6 +11,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Calculadora Folha Invest</title>
 <style>
+	body {
+		background-color: #FAFAFA;
+	}
 	.table {
 		padding: 0px;
 	}
@@ -18,7 +21,7 @@
 		padding: 0px;
 	}
 	.table td {
-		padding: 5px;
+		padding: 10px;
 	}
 </style>
 </head>
@@ -32,7 +35,7 @@
 					name="calculator">
 					<div class="input-field col s12">
 						<input id="vlAction" type="text" class="validate"
-							placeholder="Valor Inicial" name="vlAction"
+							placeholder="Preço Médio" name="vlAction"
 							onkeypress='return numeroDecimal(this)' required />
 					</div>
 					<div class="input-field col s12">
@@ -49,26 +52,26 @@
 						name="action">Calcular</button>
 				</form>
 				<br />
-				<table class="table">
+				<table class="table striped">
 					<tr>
 						<td class="tg-yw4l">Total Ganho</td>
-						<td class="tg-yw4l">${results.totalWin}</td>
+						<td class="tg-yw4l">R$ ${results.totalWin}</td>
 					</tr>
 					<tr>
 						<td class="tg-yw4l">Juros Compra</td>
-						<td class="tg-yw4l">${results.interestBuyPurch}</td>
+						<td class="tg-yw4l">R$ -${results.interestBuyPurch}</td>
 					</tr>
 					<tr>
 						<td class="tg-yw4l">Juros Venda</td>
-						<td class="tg-yw4l">${results.interestBuySale}</td>
+						<td class="tg-yw4l">R$ -${results.interestBuySale}</td>
 					</tr>
 					<tr>
 						<td class="tg-yw4l">Emolumentos</td>
-						<td class="tg-yw4l">${results.emolumentsPurch}</td>
+						<td class="tg-yw4l">R$ -${results.emolumentsPurch}</td>
 					</tr>
 					<tr>
 						<td class="tg-yw4l">Lucro Líquido</td>
-						<td class="tg-yw4l">${results.liquidProfit}</td>
+						<td class="tg-yw4l">R$ ${results.liquidProfit}</td>
 					</tr>
 				</table>
 			</div>
